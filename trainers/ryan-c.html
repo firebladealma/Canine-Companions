@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ryan C - Dog Trainer</title>
+  <title>CanineCompanion.pet – Ryan C, Dog Trainer</title>
   <link rel="stylesheet" href="../assets/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="nav">
     <div class="container">
-      <h1><a href="/">DogTrainers.com</a></h1>
+      <h1>
+        <a href="/">
+          <img src="https://YOUR-AWS-LOGO-URL-HERE/images/logo.svg" alt="Canine Companion" class="logo">
+        </a>
+      </h1>
       <nav>
         <a href="/">Find Trainer</a>
         <a href="/about.html">About</a>
@@ -34,7 +38,7 @@
     <div id="book" class="form-section">
       <h3>Book a Session with Ryan C</h3>
       <form name="book-ryan-c" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <p class="hidden"><label>Don’t fill: <input name="bot-field"></label></p>
+        <p class="hidden"><label>Don't fill: <input name="bot-field"></label></p>
         <input type="hidden" name="trainer" value="Ryan C" />
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
