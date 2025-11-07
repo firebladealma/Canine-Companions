@@ -1,14 +1,30 @@
 :root {
-  --primary: #2c6e49;
-  --blue: #4a90e2;
-  --blue-dark: #357abd;
-  --green: #27ae60;
-  --bg: #fafaf7;
-  --card: #ffffff;
-  --text: #2d3436;
-  --light: #636e72;
+  /* ── NEW CANINE COMPANION PALETTE ─────────────────────── */
+  --primary:      #c2953e;   /* tussock – main brand */
+  --accent:       #c2703f;   /* copper – buttons, links */
+  --accent-dark:  #a45a2a;   /* darker hover */
+  --bg:           #ede7df;   /* pearl-bush – page background */
+  --card:         #ffffff;   /* white cards for contrast */
+  --text:         #4a4a4a;   /* dark gray – readable */
+  --light:        #7c8d6c;   /* camouflage-green – secondary text */
+  --green:        #7c8d6c;   /* in-person border */
+  --blue:         #c2703f;   /* online border (copper) */
+  --blue-dark:    #a45a2a;
 }
 
+/* ── LOGO STYLES ───────────────────────────────────────── */
+.logo {
+  height: 48px;
+  width: auto;
+  display: block;
+  transition: all 0.3s ease;
+}
+.logo:hover { opacity: 0.9; }
+@media (max-width: 600px) {
+  .logo { height: 36px; }
+}
+
+/* ── BASE STYLES ───────────────────────────────────────── */
 * { box-sizing: border-box; }
 body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
@@ -22,19 +38,42 @@ body {
 .container { max-width: 960px; margin: 0 auto; }
 a { color: inherit; text-decoration: none; }
 
+/* ── NAVIGATION ────────────────────────────────────────── */
 .nav {
   background: var(--card);
   padding: 1rem 0;
   margin-bottom: 2rem;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
-.nav .container { display: flex; justify-content: space-between; align-items: center; }
-.nav h1 a { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
-.nav nav a { margin-left: 1.5rem; font-weight: 600; color: var(--primary); }
-.nav nav a:hover { color: var(--blue); }
+.nav .container { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+.nav h1 a { 
+  font-size: 1.5rem; 
+  font-weight: 700; 
+  color: var(--primary); 
+  display: block;
+}
+.nav nav a { 
+  margin-left: 1.5rem; 
+  font-weight: 600; 
+  color: var(--primary); 
+  transition: color 0.3s;
+}
+.nav nav a:hover { color: var(--accent); }
 
-h2 { text-align: center; color: var(--primary); margin-bottom: 1.5rem; font-size: 1.8rem; font-weight: 700; }
+/* ── TYPOGRAPHY ────────────────────────────────────────── */
+h2 { 
+  text-align: center; 
+  color: var(--primary); 
+  margin-bottom: 1.5rem; 
+  font-size: 1.8rem; 
+  font-weight: 700; 
+}
 
+/* ── TRAINER FINDER ────────────────────────────────────── */
 #trainer-finder {
   background: var(--card);
   padding: 2.5rem;
@@ -44,16 +83,29 @@ h2 { text-align: center; color: var(--primary); margin-bottom: 1.5rem; font-size
   margin: 0 auto;
 }
 
-.search-bar { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; justify-content: center; }
-.search-bar label { font-weight: 600; color: var(--primary); }
+.search-bar { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 0.75rem; 
+  align-items: center; 
+  justify-content: center; 
+}
+.search-bar label { 
+  font-weight: 600; 
+  color: var(--primary); 
+}
 .search-bar input[type="text"] {
   padding: 0.85rem;
   width: 160px;
   font-size: 1rem;
-  border: 2px solid #dfe6e8;
+  border: 2px solid #d6bf95; /* pavlova border */
   border-radius: 10px;
+  transition: border 0.3s;
 }
-.search-bar input:focus { border-color: var(--primary); outline: none; }
+.search-bar input:focus { 
+  border-color: var(--primary); 
+  outline: none; 
+}
 .search-bar button {
   padding: 0.85rem 1.8rem;
   background: var(--primary);
@@ -62,12 +114,24 @@ h2 { text-align: center; color: var(--primary); margin-bottom: 1.5rem; font-size
   border-radius: 10px;
   cursor: pointer;
   font-weight: 600;
+  transition: all 0.3s;
 }
-.search-bar button:hover { background: #1e4d34; }
+.search-bar button:hover { 
+  background: var(--accent-dark); 
+  transform: translateY(-1px);
+}
 
 #results { margin-top: 2rem; }
-h3 { color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 0.75rem; margin-top: 2rem; font-size: 1.4rem; font-weight: 600; }
+h3 { 
+  color: var(--primary); 
+  border-bottom: 2px solid #d6bf95; /* pavlova border */
+  padding-bottom: 0.75rem; 
+  margin-top: 2rem; 
+  font-size: 1.4rem; 
+  font-weight: 600; 
+}
 
+/* ── TRAINER CARDS ─────────────────────────────────────── */
 ul { list-style: none; padding: 0; }
 li {
   margin: 1.2rem 0;
@@ -79,55 +143,168 @@ li {
   transition: all 0.3s;
   position: relative;
 }
-li:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+li:hover { 
+  transform: translateY(-4px); 
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
+}
 li.online { border-left-color: var(--blue); }
 
 .trainer-photo {
-  width: 80px; height: 80px; border-radius: 12px; object-fit: cover;
-  float: left; margin-right: 1.4rem; border: 3px solid var(--blue);
+  width: 80px; 
+  height: 80px; 
+  border-radius: 12px; 
+  object-fit: cover;
+  float: left; 
+  margin-right: 1.4rem; 
+  border: 3px solid var(--blue);
   transition: all 0.3s;
 }
-li:hover .trainer-photo { border-color: var(--blue-dark); transform: scale(1.05); }
-
-.trainer-name { font-weight: 700; font-size: 1.15rem; color: var(--primary); display: block; margin-bottom: 0.4rem; }
-.trainer-name:hover { color: var(--blue); }
-.trainer-blurb { font-style: italic; color: var(--light); font-size: 0.9rem; margin-bottom: 0.8rem; display: block; }
-
-.info-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
-.distance { font-weight: 600; color: var(--green); font-size: 0.95rem; }
-.timezone { font-size: 0.8rem; color: var(--light); background: #f1f8f5; padding: 0.2rem 0.5rem; border-radius: 6px; }
-.price { color: var(--light); font-size: 0.95rem; margin-top: 0.3rem; display: block; }
-
-.btn-group { display: flex; gap: 0.75rem; margin-top: 1rem; flex-wrap: wrap; }
-.btn {
-  padding: 0.6rem 1.2rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600;
-  text-align: center; flex: 1; min-width: 110px; transition: all 0.3s;
+li:hover .trainer-photo { 
+  border-color: var(--accent-dark); 
+  transform: scale(1.05); 
 }
-.btn-book { background: var(--blue); color: white; }
-.btn-book:hover { background: var(--blue-dark); transform: translateY(-1px); }
-.btn-profile { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
-.btn-profile:hover { background: var(--primary); color: white; }
 
-.error { color: #e74c3c; font-weight: 600; }
+.trainer-name { 
+  font-weight: 700; 
+  font-size: 1.15rem; 
+  color: var(--primary); 
+  display: block; 
+  margin-bottom: 0.4rem; 
+}
+.trainer-name:hover { color: var(--accent); }
+.trainer-blurb { 
+  font-style: italic; 
+  color: var(--light); 
+  font-size: 0.9rem; 
+  margin-bottom: 0.8rem; 
+  display: block; 
+}
+
+.info-row { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  flex-wrap: wrap; 
+  gap: 0.5rem; 
+}
+.distance { 
+  font-weight: 600; 
+  color: var(--green); 
+  font-size: 0.95rem; 
+}
+.timezone { 
+  font-size: 0.8rem; 
+  color: var(--light); 
+  background: #f8f5f0; /* light pearl-bush */
+  padding: 0.2rem 0.5rem; 
+  border-radius: 6px; 
+}
+.price { 
+  color: var(--light); 
+  font-size: 0.95rem; 
+  margin-top: 0.3rem; 
+  display: block; 
+}
+
+.btn-group { 
+  display: flex; 
+  gap: 0.75rem; 
+  margin-top: 1rem; 
+  flex-wrap: wrap; 
+}
+.btn {
+  padding: 0.6rem 1.2rem; 
+  border-radius: 8px; 
+  font-size: 0.9rem; 
+  font-weight: 600;
+  text-align: center; 
+  flex: 1; 
+  min-width: 110px; 
+  transition: all 0.3s;
+}
+.btn-book { 
+  background: var(--accent); 
+  color: white; 
+}
+.btn-book:hover { 
+  background: var(--accent-dark); 
+  transform: translateY(-1px); 
+}
+.btn-profile { 
+  background: transparent; 
+  color: var(--primary); 
+  border: 2px solid var(--primary); 
+}
+.btn-profile:hover { 
+  background: var(--primary); 
+  color: white; 
+}
+
+.error { color: #c2703f; font-weight: 600; } /* copper for errors */
 .loading { color: var(--primary); font-style: italic; }
 
-/* Forms */
-form { display: grid; gap: 1rem; max-width: 500px; margin: 2rem auto; }
-form input, form textarea {
-  width: 100%; padding: 0.85rem; border: 2px solid #dfe6e9; border-radius: 10px; font: inherit;
+/* ── FORMS ─────────────────────────────────────────────── */
+form { 
+  display: grid; 
+  gap: 1rem; 
+  max-width: 500px; 
+  margin: 2rem auto; 
 }
-form input:focus, form textarea:focus { border-color: var(--primary); outline: none; }
+form input, 
+form textarea {
+  width: 100%; 
+  padding: 0.85rem; 
+  border: 2px solid #d6bf95; /* pavlova */
+  border-radius: 10px; 
+  font: inherit;
+}
+form input:focus, 
+form textarea:focus { 
+  border-color: var(--primary); 
+  outline: none; 
+}
 form button {
-  background: var(--primary); color: white; border: none; padding: 0.85rem; border-radius: 10px; cursor: pointer; font-weight: 600;
+  background: var(--primary); 
+  color: white; 
+  border: none; 
+  padding: 0.85rem; 
+  border-radius: 10px; 
+  cursor: pointer; 
+  font-weight: 600;
 }
-form button:hover { background: #1e4d34; }
+form button:hover { 
+  background: var(--accent-dark); 
+}
 
 .hidden { display: none; }
 
-/* Profile Page */
+/* ── TRAINER PROFILE PAGES ─────────────────────────────── */
 .profile .trainer-card {
-  display: flex; gap: 2rem; align-items: flex-start; background: var(--card);
-  padding: 2rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 2rem;
+  display: flex; 
+  gap: 2rem; 
+  align-items: flex-start; 
+  background: var(--card);
+  padding: 2rem; 
+  border-radius: 16px; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+  margin-bottom: 2rem;
 }
-.profile img { width: 180px; height: 180px; object-fit: cover; border-radius: 16px; }
-.profile .blurb { font-style: italic; color: var(--light); margin: 0.5rem 0 1rem; }
+.profile img { 
+  width: 180px; 
+  height: 180px; 
+  object-fit: cover; 
+  border-radius: 16px; 
+}
+.profile .blurb { 
+  font-style: italic; 
+  color: var(--light); 
+  margin: 0.5rem 0 1rem; 
+}
+
+/* ── RESPONSIVE ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  body { padding: 1rem; }
+  .search-bar { flex-direction: column; text-align: center; }
+  .profile .trainer-card { flex-direction: column; text-align: center; }
+  .btn-group { justify-content: center; }
+}
