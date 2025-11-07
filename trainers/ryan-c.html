@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CanineCompanion.pet – Ryan C</title>
+  <title>CanineCompanion.pet – Ryan C, Dog Trainer</title>
   <link rel="stylesheet" href="../assets/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -48,5 +48,12 @@
       </form>
     </div>
   </main>
+
+  <!-- Auto-scroll to #book if in URL -->
+  <script>
+    if (window.location.hash === '#book') {
+      document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
