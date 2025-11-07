@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CanineCompanion.pet – Njoud, Dog Trainer</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="nav">
+    <div class="container">
+      <h1>
+        <a href="/">
+          <img src="https://dogwiseacademy-web.s3.us-east-1.amazonaws.com/logo.png" alt="Canine Companion" class="logo">
+        </a>
+      </h1>
+      <nav>
+        <a href="/">Find Trainer</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container profile">
+    <div class="trainer-card">
+      <img src="https://dogwiseacademy-prod.s3.us-east-1.amazonaws.com/IMG_6580_1_dfc444041f.jpg" alt="Njoud">
+      <div>
+        <h2>Njoud</h2>
+        <p class="blurb">Njoud is a compassionate trainer with a focus on building confident, happy dogs through positive reinforcement.</p>
+        <p><strong>Location:</strong> So Cal | <strong>Timezone:</strong> PST</p>
+        <p><strong>Price:</strong> $150–$200/session</p>
+        <a href="#book" class="btn btn-book">Book Now</a>
+      </div>
+    </div>
+
+    <div id="book" class="form-section">
+      <h3>Book a Session with Njoud</h3>
+      <form name="book-njoud" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <p class="hidden"><label>Don't fill: <input name="bot-field"></label></p>
+        <input type="hidden" name="trainer" value="Njoud" />
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="tel" name="phone" placeholder="Phone (optional)" />
+        <textarea name="message" placeholder="Tell us about your dog..." rows="4" required></textarea>
+        <button type="submit">Send Booking Request</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
