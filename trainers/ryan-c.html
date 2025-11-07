@@ -35,18 +35,18 @@
       </div>
     </div>
 
-    <div id="book" class="form-section">
-      <h3>Book a Session with Ryan C</h3>
-      <form name="book-ryan-c" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <p class="hidden"><label>Don't fill: <input name="bot-field"></label></p>
-        <input type="hidden" name="trainer" value="Ryan C" />
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <input type="tel" name="phone" placeholder="Phone (optional)" />
-        <textarea name="message" placeholder="Tell us about your dog..." rows="4" required></textarea>
-        <button type="submit">Send Booking Request</button>
-      </form>
-    </div>
+   <div id="book" class="form-section">
+  <h3>Book a Session with Ryan C</h3>
+  <form name="book-ryan-c" method="POST" data-netlify="true" action="/form-success.html" netlify-honeypot="bot-field">
+    <p class="hidden"><label>Don't fill: <input name="bot-field"></label></p>
+    <input type="hidden" name="trainer" value="Ryan C" />
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <input type="tel" name="phone" placeholder="Phone (optional)" />
+    <textarea name="message" placeholder="Tell us about your dog..." rows="4" required></textarea>
+    <button type="submit">Send Booking Request</button>
+  </form>
+</div>
   </main>
 </body>
 </html>
