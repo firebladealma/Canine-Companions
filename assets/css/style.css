@@ -1,36 +1,36 @@
 :root {
-  /* ── CANINE COMPANION PALETTE ─────────────────────── */ 
-  --primary: #c2953e;     /* tussock – main brand */
-  --accent: #c2703f;      /* copper – buttons, links */
-  --accent-dark: #a45a2a; /* darker hover */
-  --bg: #ede7df;          /* pearl-bush – page background */
-  --card: #ffffff;        /* white cards */
-  --text: #4a4a4a;        /* dark gray – readable */
-  --light: #7c8d6c;       /* camouflage-green – secondary text */
-  --green: #7c8d6c;       /* in-person border */
-  --blue: #c2703f;        /* online border (copper) */
+  /* ── CANINE COMPANION PALETTE ─────────────────────── */
+  --primary: #c2953e;
+  --accent: #c2703f;
+  --accent-dark: #a45a2a;
+  --bg: #ede7df;
+  --card: #ffffff;
+  --text: #4a4a4a;
+  --light: #7c8d6c;
+  --green: #7c8d6c;
+  --blue: #c2703f;
   --blue-dark: #a45a2a;
-  --hero-title: #808f71;  /* The Canine Companion */
-  --hero-subtitle: #737373; /* Dog Training That Works */
+  --hero-title: #808f71;
+  --hero-subtitle: #737373;
 }
 
 /* ── LOGO STYLES ───────────────────────────────────────── */
 .logo {
-  height: 160px !important;
+  height: 180px !important;
   width: auto;
-  max-width: 360px;
+  max-width: 380px;
   display: block;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.3));
   transition: all 0.3s ease;
 }
 .logo:hover {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 @media (max-width: 768px) {
-  .logo { height: 110px !important; }
+  .logo { height: 130px !important; }
 }
 @media (max-width: 480px) {
-  .logo { height: 90px !important; }
+  .logo { height: 100px !important; }
 }
 
 /* ── BASE STYLES ───────────────────────────────────────── */
@@ -43,38 +43,46 @@ body {
   color: var(--text);
   line-height: 1.6;
 }
-.container { max-width: 960px; margin: 0 auto; }
 a { color: inherit; text-decoration: none; }
 
-/* ── NAVIGATION ────────────────────────────────────────── */
+/* ── FULL-WIDTH NAV ───────────────────────────────────── */
 .nav {
-  background: var(--card);
-  padding: 1rem 0;
-  margin-bottom: 0;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.2rem 2rem;
+  margin: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   position: relative;
   z-index: 10;
+  backdrop-filter: blur(10px);
+  width: 100%;
 }
-.nav .container {
+
+.nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
-.nav h1 a {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary);
-  display: block;
+
+.nav h1 {
+  margin: 0;
 }
+
 .nav nav a {
-  margin-left: 1.5rem;
+  margin-left: 2rem;
   font-weight: 600;
   color: var(--primary);
+  font-size: 1.05rem;
   transition: color 0.3s;
 }
-.nav nav a:hover { color: var(--accent); }
 
-/* ── HERO SECTION (HOME PAGE) ─────────────────────────── */
+.nav nav a:hover {
+  color: var(--accent);
+}
+
+/* ── HERO SECTION (FULL WIDTH) ────────────────────────── */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -83,7 +91,9 @@ a { color: inherit; text-decoration: none; }
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 0;
+  margin: 0;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -92,71 +102,85 @@ a { color: inherit; text-decoration: none; }
   top: 0; left: 0; right: 0; bottom: 0;
   background: url('https://dogwiseacademy-web.s3.us-east-1.amazonaws.com/Cute_dog__image_for_website-removebg-preview.png') center/contain no-repeat;
   background-color: #f8f9fa;
+  background-attachment: fixed;
   filter: brightness(1) drop-shadow(0 10px 30px rgba(0,0,0,0.15));
   z-index: -1;
-  opacity: 0.92;
+  opacity: 0.9;
 }
 
-/* Hero Text Overlay */
+/* HERO CONTENT */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 .hero-text {
-  margin-bottom: 2.5rem;
-  padding: 0 1rem;
+  margin-bottom: 2rem;
 }
 
 .hero-text h1 {
-  font-size: 3.4rem;
+  font-size: 3.6rem;
   font-weight: 700;
   color: var(--hero-title);
   margin: 0 0 0.4rem 0;
-  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
-  letter-spacing: -0.8px;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  letter-spacing: -1px;
 }
 
 .hero-text p {
-  font-size: 1.45rem;
+  font-size: 1.5rem;
   color: var(--hero-subtitle);
   margin: 0;
   font-weight: 500;
-  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Search Box */
+/* SEARCH BOX */
 .search-bar {
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-  max-width: 460px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.96);
-  padding: 2.2rem;
-  border-radius: 18px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(128, 143, 113, 0.15);
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.97);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(128, 143, 113, 0.2);
 }
 
 .search-bar label {
   font-weight: 600;
   color: #2c2c2c;
   font-size: 1.12rem;
+  display: block;
+  margin-bottom: 0.8rem;
 }
 
 .search-bar input {
+  width: 100%;
   padding: 1rem 1.1rem;
   font-size: 1.15rem;
   border: 2.5px solid #e2e8f0;
   border-radius: 12px;
   outline: none;
   transition: all 0.3s ease;
+  margin-bottom: 1rem;
 }
 
 .search-bar input:focus {
   border-color: var(--hero-title);
   box-shadow: 0 0 0 4px rgba(128, 143, 113, 0.22);
-  transform: translateY(-1px);
 }
 
 .search-bar button {
+  width: 100%;
   padding: 1rem 1.8rem;
   font-size: 1.15rem;
   font-weight: 700;
@@ -176,7 +200,7 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 8px 20px rgba(128, 143, 113, 0.3);
 }
 
-/* ── TYPOGRAPHY ────────────────────────────────────────── */
+/* ── TYPOGRAPHY & REST OF SITE ────────────────────────── */
 h2 {
   text-align: center;
   color: var(--primary);
@@ -185,202 +209,24 @@ h2 {
   font-weight: 700;
 }
 
-/* ── TRAINER FINDER ────────────────────────────────────── */
-#trainer-finder {
-  background: var(--card);
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  max-width: 720px;
+#trainer-finder, #results, ul, li, form, .profile {
+  max-width: 960px;
   margin: 0 auto;
-}
-#results { margin-top: 2rem; }
-h3 {
-  color: var(--primary);
-  border-bottom: 2px solid #d6bf95;
-  padding-bottom: 0.75rem;
-  margin-top: 2rem;
-  font-size: 1.4rem;
-  font-weight: 600;
+  padding: 0 1rem;
 }
 
-/* ── TRAINER CARDS ─────────────────────────────────────── */
-ul { list-style: none; padding: 0; }
-li {
-  margin: 1.2rem 0;
-  padding: 1.4rem;
-  background: var(--card);
-  border-radius: 12px;
-  border-left: 5px solid var(--green);
-  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
-  transition: all 0.3s;
-  position: relative;
-}
-li:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-li.online { border-left-color: var(--blue); }
-.trainer-photo {
-  width: 80px;
-  height: 80px;
-  border-radius: 12px;
-  object-fit: cover;
-  float: left;
-  margin-right: 1.4rem;
-  border: 3px solid var(--blue);
-  transition: all 0.3s;
-}
-li:hover .trainer-photo {
-  border-color: var(--accent-dark);
-  transform: scale(1.05);
-}
-.trainer-name {
-  font-weight: 700;
-  font-size: 1.15rem;
-  color: var(--primary);
-  display: block;
-  margin-bottom: 0.4rem;
-}
-.trainer-name:hover { color: var(--accent); }
-.trainer-blurb {
-  font-style: italic;
-  color: var(--light);
-  font-size: 0.9rem;
-  margin-bottom: 0.8rem;
-  display: block;
-}
-.info-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-.distance {
-  font-weight: 600;
-  color: var(--green);
-  font-size: 0.95rem;
-}
-.timezone {
-  font-size: 0.8rem;
-  color: var(--light);
-  background: #f8f5f0;
-  padding: 0.2rem 0.5rem;
-  border-radius: 6px;
-}
-.price {
-  color: var(--light);
-  font-size: 0.95rem;
-  margin-top: 0.3rem;
-  display: block;
-}
-.btn-group {
-  display: flex;
-  gap: 0.75rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
-}
-.btn {
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-align: center;
-  flex: 1;
-  min-width: 110px;
-  transition: all 0.3s;
-}
-.btn-book {
-  background: var(--accent);
-  color: white;
-}
-.btn-book:hover {
-  background: var(--accent-dark);
-  transform: translateY(-1px);
-}
-.btn-profile {
-  background: transparent;
-  color: var(--primary);
-  border: 2px solid var(--primary);
-}
-.btn-profile:hover {
-  background: var(--primary);
-  color: white;
-}
-.error { color: #c2703f; font-weight: 600; }
-.loading { color: var(--primary); font-style: italic; }
-
-/* ── FORMS ─────────────────────────────────────────────── */
-form {
-  display: grid;
-  gap: 1rem;
-  max-width: 500px;
-  margin: 2rem auto;
-}
-form input,
-form textarea {
-  width: 100%;
-  padding: 0.85rem;
-  border: 2px solid #d6bf95;
-  border-radius: 10px;
-  font: inherit;
-}
-form input:focus,
-form textarea:focus {
-  border-color: var(--primary);
-  outline: none;
-}
-form button {
-  background: var(--primary);
-  color: white;
-  border: none;
-  padding: 0.85rem;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 600;
-}
-form button:hover {
-  background: var(--accent-dark);
-}
-.hidden { display: none; }
-
-/* ── TRAINER PROFILE PAGES ─────────────────────────────── */
-.profile .trainer-card {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-  background: var(--card);
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  margin-bottom: 2rem;
-}
-.profile img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 16px;
-}
-.profile .blurb {
-  font-style: italic;
-  color: var(--light);
-  margin: 0.5rem 0 1rem;
-}
-
-/* ── RESPONSIVE ────────────────────────────────────────── */
+/* ── RESPONSIVE ───────────────────────────────────────── */
 @media (max-width: 768px) {
-  body { padding: 1rem; }
-  .hero-text h1 { font-size: 2.6rem; }
-  .hero-text p { font-size: 1.25rem; }
-  .search-bar { padding: 1.8rem; border-radius: 16px; }
-  .profile .trainer-card { flex-direction: column; text-align: center; }
-  .btn-group { justify-content: center; }
+  .hero-text h1 { font-size: 2.8rem; }
+  .hero-text p { font-size: 1.3rem; }
+  .search-bar { padding: 2rem; }
+  .nav { padding: 1rem; }
+  .nav nav a { margin-left: 1rem; font-size: 0.95rem; }
 }
 
 @media (max-width: 480px) {
-  .hero-text h1 { font-size: 2.1rem; }
+  .hero-text h1 { font-size: 2.2rem; }
   .hero-text p { font-size: 1.1rem; }
-  .search-bar { padding: 1.4rem; }
+  .search-bar { padding: 1.5rem; }
   .search-bar input, .search-bar button { font-size: 1rem; }
 }
