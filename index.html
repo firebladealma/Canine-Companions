@@ -8,13 +8,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-bg"></div>
-    
+   
+    <!-- FULL-WIDTH NAV -->
     <header class="nav">
-      <div class="container">
+      <div class="nav-inner">
         <h1>
           <a href="/">
             <img src="https://dogwiseacademy-web.s3.us-east-1.amazonaws.com/logo.png" alt="Canine Companion" class="logo">
@@ -28,6 +28,7 @@
       </div>
     </header>
 
+    <!-- HERO CONTENT -->
     <div class="hero-content">
       <div class="hero-text">
         <h1>The Canine Companion</h1>
@@ -37,6 +38,7 @@
       <div class="search-bar">
         <label for="zipcode">Enter your ZIP code:</label>
         <input type="text" id="zipcode" placeholder="e.g. 92371" maxlength="5" />
+ />
         <button onclick="findTrainers()">Search</button>
       </div>
 
@@ -46,6 +48,5 @@
 
   <script src="/data/trainers.json" type="text/javascript"></script>
   <script src="/assets/js/main.js"></script>
-  <!-- HERO UPDATE: $(date) -->
 </body>
-</html> 
+</html>
